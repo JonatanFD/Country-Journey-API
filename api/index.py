@@ -1,11 +1,15 @@
 from flask import Flask
-
+import json
+from data.constantes import *
 app = Flask(__name__)
 
-@app.route('/')
-def home():
-    return 'Hello, World! Esta es un cambio'
+@app.route("/")
+def hello_world():
+    return "<p>Its working</p>"
 
-@app.route('/about')
-def about():
-    return 'About'
+
+@app.route("/cities")
+def getCities():
+    with open(CITIES_JSON_FILE, 'r') as file:
+        cities = json.load(file)
+        return jsonify(cities)
