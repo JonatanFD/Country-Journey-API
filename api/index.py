@@ -1,7 +1,6 @@
 from flask import *
 import json
 from api.algorithm.journey import *
-from start import *
 
 app = Flask(__name__)
 
@@ -25,16 +24,9 @@ def after_request(response):
 
 @app.route("/cities")
 def getCities():
-
-    try:
-        with open(CITIES_JSON_FILE, 'r') as file:
-            cities = json.load(file)
-            return jsonify(cities)
-    except:
-        start()
-        with open(CITIES_JSON_FILE, 'r') as file:
-            cities = json.load(file)
-            return jsonify(cities)
+    with open(CITIES_JSON_FILE, 'r') as file:
+        cities = json.load(file)
+        return jsonify(cities)
 
 
 @app.route("/cities/filter")
@@ -64,15 +56,9 @@ def filterCities():
 
 @app.route("/routes")
 def getRoutes():
-    try:
-        with open(ROUTES_JSON_FILE, 'r') as file:
-            routes = json.load(file)
-            return jsonify(routes)
-    except:
-        start()
-        with open(ROUTES_JSON_FILE, 'r') as file:
-            routes = json.load(file)
-            return jsonify(routes)
+    with open(ROUTES_JSON_FILE, 'r') as file:
+        routes = json.load(file)
+        return jsonify(routes)
 
 
 @app.route("/journey", methods=['POST'])
