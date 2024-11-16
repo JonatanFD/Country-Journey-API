@@ -1,28 +1,67 @@
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fvercel%2Fexamples%2Ftree%2Fmain%2Fpython%2Fflask3&demo-title=Flask%203%20%2B%20Vercel&demo-description=Use%20Flask%203%20on%20Vercel%20with%20Serverless%20Functions%20using%20the%20Python%20Runtime.&demo-url=https%3A%2F%2Fflask3-python-template.vercel.app%2F&demo-image=https://assets.vercel.com/image/upload/v1669994156/random/flask.png)
 
-# Flask + Vercel
+# Manual de Instalación y Configuración
 
-This example shows how to use Flask 3 on Vercel with Serverless Functions using the [Python Runtime](https://vercel.com/docs/concepts/functions/serverless-functions/runtimes/python).
+## Requisitos del Proyecto
+Este proyecto está desarrollado con:
+- Flask (Framework web)
+- Anaconda (Entorno de desarrollo)
 
-## Demo
+## Instalación de Anaconda
 
-https://flask-python-template.vercel.app/
+1. Descarga Anaconda:
+   - Visita [https://www.anaconda.com/products/distribution](https://www.anaconda.com/products/distribution)
+   - Selecciona la versión correspondiente a tu sistema operativo (Windows/MacOS/Linux)
 
-## How it Works
+2. Instala Anaconda:
+   - **Windows**: Ejecuta el instalador descargado y sigue las instrucciones
+   - **MacOS**: Abre el archivo .pkg descargado y sigue el asistente
+   - **Linux**: Desde terminal:
+     ```bash
+     bash ~/Downloads/Anaconda3-20XX.XX-Linux-x86_64.sh
+     ```
 
-This example uses the Web Server Gateway Interface (WSGI) with Flask to enable handling requests on Vercel with Serverless Functions.
+3. Verifica la instalación:
+   ```bash
+   conda --version
+   ```
 
-## Running Locally
+## Configuración del Proyecto
 
-```bash
-npm i -g vercel
-vercel dev
-```
+1. Crea un nuevo entorno:
+   ```bash
+   conda create --name env python=3.9
+   ```
 
-Your Flask application is now available at `http://localhost:3000`.
+2. Activa el entorno:
+   ```bash
+   conda activate env
+   ```
 
-## One-Click Deploy
+3. Instala las dependencias:
+   ```bash
+   pip install flask
+   ```
 
-Deploy the example using [Vercel](https://vercel.com?utm_source=github&utm_medium=readme&utm_campaign=vercel-examples):
+## Carga de Datos
+Es importante ejecutar este script primero para cargar los datos de las ciudades y las rutas.
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fvercel%2Fexamples%2Ftree%2Fmain%2Fpython%2Fflask3&demo-title=Flask%203%20%2B%20Vercel&demo-description=Use%20Flask%203%20on%20Vercel%20with%20Serverless%20Functions%20using%20the%20Python%20Runtime.&demo-url=https%3A%2F%2Fflask3-python-template.vercel.app%2F&demo-image=https://assets.vercel.com/image/upload/v1669994156/random/flask.png)
+Ejecutar:
+   ```bash
+   python start.py
+   ```
+
+
+## Iniciar el Servidor Flask
+
+1. Activa el entorno si no está activo:
+   ```bash
+   conda activate env
+   ```
+
+2. Inicia el servidor:
+   ```bash
+   flask --app main run --debug
+   ```
+
+3. Accede a la aplicación en tu navegador:
+   - [http://localhost:5000](http://localhost:5000)
