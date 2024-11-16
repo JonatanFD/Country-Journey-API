@@ -1,6 +1,6 @@
 from flask import Flask
 import json
-from data.constantes import *
+from api.data.constantes import *
 app = Flask(__name__)
 
 @app.route("/")
