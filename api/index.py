@@ -1,7 +1,7 @@
 from flask import *
 import json
-from data.constantes import *
-from algorithm.journey import *
+from api.data.constantes import *
+from api.algorithm.journey import *
 from start import *
 
 app = Flask(__name__)
