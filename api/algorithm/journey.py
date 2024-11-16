@@ -1,6 +1,8 @@
-from api.data.constantes import *
 import heapq
 import json
+
+CITIES_JSON_NO_MERCATOR = "./api/cities_no_mercator.json"
+GRAPH_JSON_FILE = "./api/graph.json"
 
 def getHeuristics():
     graph_dict = {}

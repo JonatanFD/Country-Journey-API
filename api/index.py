@@ -1,10 +1,12 @@
 from flask import *
 import json
-from api.data.constantes import *
 from api.algorithm.journey import *
 from start import *
 
 app = Flask(__name__)
+
+CITIES_JSON_FILE = "./api/cities.json"
+ROUTES_JSON_FILE = "./api/routes.json"
 
 
 @app.route("/")
